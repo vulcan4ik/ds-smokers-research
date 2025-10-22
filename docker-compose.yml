@@ -1,0 +1,14 @@
+services:
+  jupyter:
+    build: ./docker/jupyter/
+    ports:
+      - "8888:8888"
+    volumes:
+      - .:/home/jovyan/work
+    command: start-notebook.py --ServerApp.token='' --ServerApp.password=''
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
