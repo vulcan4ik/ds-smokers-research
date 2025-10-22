@@ -20,3 +20,8 @@ Thumbs.db
 # Other #
 #####################
 lib/__pycache__/
+
+# Игнорировать данные скачанные через gdown
+
+ ipynb/*.csv
+ ipynb/*.zip
