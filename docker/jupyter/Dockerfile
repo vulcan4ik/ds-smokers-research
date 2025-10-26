@@ -4,8 +4,8 @@ COPY requirements.txt requirements.txt
 
 RUN pip install -r requirements.txt
 
-# ==УСТАНАВЛИВАЕМ LSP, BLACK, ISORT ===
-RUN pip install --no-cache-dir jupyterlab-lsp 'python-lsp-server[all]'
+# ==УСТАНАВЛИВАЕМ LSP, CODEIUM ===
+RUN pip install --no-cache-dir codeium-jupyter jupyterlab-lsp 'python-lsp-server[all]'
 # ==== ДОБАВЛЯЕМ НАСТРОЙКИ LSP ====
 RUN mkdir -p /home/jovyan/.jupyter/lab/user-settings/@krassowski/jupyterlab-lsp
 RUN echo '\
@@ -20,6 +20,15 @@ RUN echo '\
     "continuousHinting": true\n\
     }\n' \
     > /home/jovyan/.jupyter/lab/user-settings/@krassowski/jupyterlab-lsp/plugin.jupyterlab-settings
+
+# ==== ДОБАВЛЯЕМ НАСТРОЙКИ WINDSURF ====
+RUN mkdir -p /home/jovyan/.jupyter/lab/user-settings/windsurf
+RUN echo '\
+    {\n\
+    "windsurf.enterpise_url": "https://windsurf.dev",\n\
+    "windsurf.auth_token": ""\n\
+    }\n' \
+    > /home/jovyan/.jupyter/lab/user-settings/windsurf/settings.json
 # == НАСТРОЙКИ ПОЛЬЗОВАТЕЛЯ ==
 WORKDIR /home/jovyan/work
 USER ${NB_UID}
