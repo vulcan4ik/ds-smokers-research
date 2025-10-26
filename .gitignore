@@ -26,3 +26,8 @@ lib/__pycache__/
  ipynb/*.csv
  ipynb/*.zip
  data/*.zip
+
+# Игнорировать временные файлы LSP и Codeium
+.virtual_documents/
+codeium-jupyter/
+.ipynb_checkpoints/
