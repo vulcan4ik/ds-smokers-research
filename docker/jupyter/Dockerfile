@@ -1,6 +1,6 @@
 FROM jupyter/datascience-notebook:latest
 
-COPY requirements.txt requirements.txt
+COPY docker/jupyter/requirements.txt requirements.txt
 
 RUN pip install -r requirements.txt
 
