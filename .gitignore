@@ -25,3 +25,5 @@ lib/__pycache__/
 
  ipynb/*.csv
  ipynb/*.zip
+ data/*.csv
+ data/*.zip
