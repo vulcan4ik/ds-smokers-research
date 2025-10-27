@@ -31,3 +31,6 @@ lib/__pycache__/
 .virtual_documents/
 codeium-jupyter/
 .ipynb_checkpoints/
+
+# Игнорировать окружение
+.env

@@ -18,10 +18,15 @@ openpyxl>=3.1.0
 xlrd>=2.0.1
 
 # Статистический анализ
-statsmodels>=0.14.0
+statsmodels==0.13.5
 
 # Jupyter расширения - БАЗОВЫЕ ВИДЖЕТЫ
 jupyterlab>=4.3.0
 ipywidgets>=8.1.0
 tqdm>=4.66.0
 jupyter-black
+
+# Jupyter расширения – LSP и Codeium (AI автодополнение)
+jupyterlab-lsp
+python-lsp-server[all]
+codeium-jupyter
